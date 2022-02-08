@@ -1,0 +1,12 @@
+1.Driver initialization is missing
+        df.init_driver("chrome");
+//      driver = df.init_driver("chrome");
+java.lang.NullPointerException
+	at com.qa.opencart.pages.LoginPage.getLoginPageTitle(LoginPage.java:23)
+Reason : driver is not initialized properly
+
+FileInputStream - FileNotFoundException
+prop.load - IOException
+
+Not able to find test-output folder in intellij to see testng reports
+================================================================================

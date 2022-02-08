@@ -1,0 +1,63 @@
+1.Create DriverFactory.java class > initialize the driver
+2.Create LoginPage.java > contains By locators and page actions
+3.Create BaseTest.java inside src/test/java > Contains test classes and assertions
+Setup() method > used for pre-conditions like initializing drivers
+
+LoginPageTest extends BaseTest > First it will execute BeforeTest > Call the DriverFactory > pass the browser
+browser condition satisfied > driver get launch , cookies cleared and window got maximized
+driver pointing to "chrome" > chrome given to driver of init_driver > driver passing to LoginPage class
+LoginPage constructor > driver got initialized > call the LoginPage > getLoginPageTitle() method will be called
+> driver is already pointing to chromedriver > title print and assert
+
+Run : LoginPageTest class
+
+WebDriver driver > can create many reference
+
+If not given any priority > test case will be executed in alphabetical order
+
+Rules: Can't write driver. methods inside testng class
+Page class should never assert anything
+
+Config.properties > contains the hard-coded values > should be written in resources > everything is string
+Create source folder > src/tests/resources > doesn't contain test data
+properties file > used to store the data in the form of key and value format > environment variable data
+To read config.properties file data > create init_prop() inside DriverFactory.java
+init_prop() method > Reading the properties from the config.properties file
+Properties > it is a class in java.util package
+prop.load(ip); >  ip is reference of FileInputStream > object will be created inside the memory
+All the properties with key value pair will be stored in Properties object(prop)
+BaseTest > prop =  df.init_prop();
+DriverFactory > Instead of passing String browserName > we are passing Properties prop > call by reference
+trim() > used to remove extra space
+Declared the Properties prop at the class level (BaseTest.java)
+
+./src/.. > ./ it means in the current project go to the src folder
+
+Excel sheet > constant data never maintain
+
+BaseTest -> calling init_prop()  -> getting the property from config.properties -> calling init_driver()
+giving the driver -> passed to the LoginPage(use the page actions) ->  Test method extending BaseTest(setup)
+-> loginTest() method -> calling LoginPage class methods and writing assertions -> generate report
+
+Paste ElementUtil.java class in utils package > Create reference in LoginPage class
+==============================================================================================================
+7/2/22:
+------
+Page Object are classic example of encapsulation
+After login landing on the accounts page > If a particular method is responsible for the next landing page
+It's a method responsibility to return the object of the landing page > return next landing page class object
+instead of void > AccountsPage > return new AccountsPage(driver);
+All the page references are maintained in the BaseTest
+
+Flow -> go to BaseTest -> init_prop() -> init_driver() -> launch url -> create object of login page class
+BeforeClass() executed -> doLogin() -> return the next landing account page class object -> storing inside
+account page reference(accPage) -> page chaining model -> 2 class connected -> call by
+object reference name.page class object
+
+POM is a design pattern not a framework
+Framework means integrating multiple components and connecting them together
+Framework approaches > data driven, keyword driven, hybrid framework
+Data driven (data provider & excel sheet) > is only for specific scenarios > Registration form
+Hybrid (data provider + testng + utilities + libraries + components)>  combination of multiple framework approaches
+We are using hybrid framework > combination of multiple design patterns along with utilities
+=================================================================================================================
