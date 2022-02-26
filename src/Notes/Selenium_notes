@@ -61,3 +61,85 @@ Data driven (data provider & excel sheet) > is only for specific scenarios > Reg
 Hybrid (data provider + testng + utilities + libraries + components)>  combination of multiple framework approaches
 We are using hybrid framework > combination of multiple design patterns along with utilities
 =================================================================================================================
+21/2/22:
+-------
+cd D:
+dir
+git clone https://github.com/amithShettigar96/Framework
+cmd //c tree
+
+git tag v4.0
+git push origin v4.0 ( v5.0 -> v5.0 )
+git log --oneline
+
+Revert : Delete from the workspace also(don't use)
+git revert 3626ee4 (commit id > 3626ee4 ) > press esc > :wq! > press Enter
+
+git add "src/main/java/com/qa/opencart/pages/DemoPage.java"
+git commit -m "added demo page"
+git status
+git reset --soft HEAD^   (stage file)
+git status
+
+
+Untracked file(WC) -- Stage -- Local repo -- Remote repo
+
+git reset --mixed HEAD^ (untracked file)
+
+git add src/main/java/com/qa/opencart/pages/DemoPage.java
+git commit -m "added demo page for hard reset"
+git status
+
+Hard reset > Delete file from everywhere
+
+git reset --hard HEAD^ (never try this command)
+Head now pointint to previous commit > HEAD is now at 3626ee4 added feature f2
+
+git status
+git add src/main/java/com/qa/opencart/pages/TestSample.java
+git commit -m "test sample"
+git push origin main (TestSample.java added to the github)
+git reset --hard HEAD^
+
+git push origin main (request reject)
+git push -f origin main ( force update is dont at remote side > deleted file from github)
+
+Reset > hard, soft and mixed commands
+
+Website > learningbranching.js.org
+git commit
+git branch loginpage (create branch)
+git checkout loginpage (switch to loginpage branch)
+git checkout -b regpage ( shortcut to create and switch to branch)
+git checkout main (switch to main branch)
+git merge regpage (merge the main branch with regpage branch together)
+
+Note : Always do merge from master(main) to local branch(regpage)
+git checkout main
+git cherry-pick C16 C18  ( merge specific commit, C16 and C18 to main branch)
+
+If file is already present on github:
+git pull origin main (overwritten by merge error)
+git stash
+git add src/main/java/com/qa/opencart/pages/SearchPage.java
+
+WIP > Work in progress
+git stash
+
+Stash > temporary memory > take pull from remote master to stash then merge to local master
+
+git stash
+git pull origin main
+git stash pop
+
+Edit and commit the remote code manually
+git pull origin main (overwritten error)
+git stash (last code written > move to stash memory)
+git pull origin main ( take latest pull from main)
+git stash pop (Merge conflict )
+
+
+
+
+
+
