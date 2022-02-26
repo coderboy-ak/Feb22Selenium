@@ -138,6 +138,52 @@ git stash (last code written > move to stash memory)
 git pull origin main ( take latest pull from main)
 git stash pop (Merge conflict )
 
+git add  src/Notes/Selenium_notes
+git push origin main
+=================================================================================================================
+22/2/22:
+-------
+Jenkins:
+
+download jenkins.war and run from command line > java -jar jenkins.war --httpPort=9090
+By default port number is 8080
+
+Manage jenkins > Global tool configuration > Add the JDK path > Maven download automatically click checkbox > Save
+
+Manage jenkins > Manage plugins > Available > Search Maven Integration plugin > Install without restart click
+Download TestNG Result plugin
+Download Allure plugin > click install without restart
+Download HTML Publisher plugin > click install without restart
+
+New Item > Nov21POMSeries > Maven Project > Click OK
+SCM > Click Git > Paste the repository URL > https://github.com/coderboy-ak/Feb22Selenium
+In Build > under goals and options > write the "clean install"
+
+clean install > goes to pom.xml file , compile the code, with the help of surefire plugin interact with testng.xml file
+it will pick testng_regression.xml file > check listener and tests blocks
+
+POM - Compile > Surefire Plugin > testng.xml  > publish report
+
+Add Post build action to publish testng results  > click Publish HTML Report > html file is under build folder
+HTML directory > build
+Index page > TestExecutionReport.html
+Report title > Extent HTML Report
+
+Click Publishing options and check first 2 checkboxes
+
+Manage jenkins > global tool configuration > click add allure commandline
+Name > allure
+It will install automatically
+
+Click Add post build action
+
+Extension chrome to see extent report in jenkins > Content-Security-Policy
+
+Delete random pages from com.qa.opencart.pages package
+go to git bash > check git status
+
+
+
 
 
 
