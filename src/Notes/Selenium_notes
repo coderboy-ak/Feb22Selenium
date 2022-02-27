@@ -259,5 +259,7 @@ pipeline{
 Click Apply and Save
 
 
+Add new Jenkinsfile to git > click build in jenkins > first it will build project from dev repository
+After dev it will run qa test case
 
-
+In windows write bat instead of sh in Jenkinsfile
