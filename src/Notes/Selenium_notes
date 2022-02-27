@@ -182,9 +182,81 @@ Extension chrome to see extent report in jenkins > Content-Security-Policy
 Delete random pages from com.qa.opencart.pages package
 go to git bash > check git status
 
+git add
+git commit
+git push origin main
+
+NGROK > proxy server
+Webhook > track changes in the master branch
+======================================================================================================================
+23/2/22:
+-------
+Build Trigger > Build periodically
+Schedule > 0 8 * * * (everyday 8 am execute)
+
+Manage jenkins > Manage plugin > Available > Search for Blue Ocean > Click install without restart
+
+CI/CD Pipeline:
+Commit changes > Trigger build > Build > Notify of build outcome > Run tests > Notify of test outcome > Deliver
+build to environment > Deploy where necessary
+
+Dashboard > Net Item > Nov21PL > Click Pipeline > Click OK
+
+Script:
+
+pipeline{
+
+    agent any
+
+        stages{
+
+            stage("Build"){
+                steps{
+                    echo("Build")
+                }
+            }
+
+             stage("Run UTs"){
+                steps{
+                    echo("Run UTs")
+                }
+            }
+
+             stage("Deploy  to QA env"){
+                steps{
+                    echo("deploy to qa environment")
+                }
+            }
+
+             stage("Run my Automation Test"){
+                steps{
+                    echo("running automation test case")
+                }
+            }
+
+             stage("Deploy to stage"){
+                steps{
+                    echo("deploy to stage")
+                }
+            }
+
+             stage("sanity test"){
+                steps{
+                    echo("sanity test on stage env")
+                }
+            }
+
+             stage("Deploy to PROD"){
+                steps{
+                    echo("deploy to prod environment")
+                }
+            }
+
+        }
+}
 
 
-
+Click Apply and Save
 
 
 

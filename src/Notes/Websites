@@ -1,3 +1,16 @@
 Opencart : https://demo.opencart.com/index.php?route=account/login
 Martin Flower(Creator of Design Patterns) > https://martinfowler.com/bliki/PageObject.html
 Simon Stewart(Creator of Selenium)
+
+NGROK download : https://ngrok.com/download
+
+Open cmd > paste ngrok token command
+Copy  > https://0dee-2405-201-6805-f0b7-714b-3ab7-80b3-445c.ngrok.io -> http://localhost:9191
+Go to github > settings > Webhooks > Add webhook
+Enter URL in Secret > https://0dee-2405-201-6805-f0b7-714b-3ab7-80b3-445c.ngrok.io/github-webhook/
+Click on Add webhook
+
+Go to jenkins project > configure
+In the Build Trigger > check GitHub hook trigger for GITScm polling checkbox
+
+ngrok authtoken 25esKtNmCc056jctv1ZgwAV5nVd_2qh62gkSdLEryTj4aCpdX
